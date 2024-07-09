@@ -1,0 +1,95 @@
+
+MYMIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    OBJECT-GROUP FROM SNMPv2-CONF
+    OBJECT-TYPE, experimental FROM SNMPv2-SMI
+    DisplayString FROM SNMPv2-TC;
+
+myMIB MODULE-IDENTITY
+    LAST-UPDATED "202406290000Z"
+    ORGANIZATION "PUCRS"
+    CONTACT-INFO "admin@localhost"
+    DESCRIPTION "My MIB"
+::= { experimental 1234 }
+
+myObjects OBJECT IDENTIFIER ::= { myMIB 1 }
+
+myName OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Device Name"
+    ::= { myObjects 1 }
+
+myLocation OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Device Location"
+    ::= { myObjects 2 }
+
+myUptime OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Device Uptime"
+    ::= { myObjects 3 }
+
+myAdminStatus OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Interface Admin Status"
+    ::= { myObjects 4 }
+
+myOperStatus OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Interface Oper Status"
+    ::= { myObjects 5 }
+
+myInTraffic OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Interface In Traffic"
+    ::= { myObjects 6 }
+
+myOutTraffic OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Interface Out Traffic"
+    ::= { myObjects 7 }
+
+myInErrors OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Interface In Errors"
+    ::= { myObjects 8 }
+
+myCPUUtilization OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "CPU Utilization"
+    ::= { myObjects 9 }
+
+myMemoryUtilization OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Memory Utilization"
+    ::= { myObjects 10 }
+
+mySessionsNumber OBJECT-TYPE
+    SYNTAX DisplayString
+    MAX-ACCESS read-write
+    STATUS current
+    DESCRIPTION "Number of Sessions"
+    ::= { myObjects 11 }
+
+END
